@@ -3,6 +3,7 @@ name: Build and Push SteVe
 on:
   push:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
