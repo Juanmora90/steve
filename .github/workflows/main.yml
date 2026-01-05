@@ -55,7 +55,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/juanmora90/steve:latest
           file: |
             # This uses the official image as base and just adds your built file
             FROM eclipse-temurin:21-jre-jammy
