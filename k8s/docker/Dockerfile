@@ -44,7 +44,7 @@ WORKDIR /code
 COPY --chown=appuser:appgroup --from=builder /code/target/steve.war ./steve.war
 
 # Expose any necessary ports (example: 8080)
-EXPOSE 8080
+EXPOSE 8180
 
 # Switch to the non-root user
 USER appuser
