@@ -11,7 +11,7 @@ jobs:
     services:
       # Transient DB for the build/test phase
       mariadb:
-        image: mariadb:11.8
+        image: mariadb:10.11
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: stevedb
