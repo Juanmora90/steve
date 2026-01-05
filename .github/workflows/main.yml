@@ -35,7 +35,7 @@ jobs:
           context: .
           file: ./k8s/docker/Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/juanmora90/steve:latest
           # Pass the internal GitHub Action DB credentials to the Docker build
           build-args: |
             DB_HOST=127.0.0.1
