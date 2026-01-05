@@ -591,5 +591,16 @@
             <artifactId>bcpkix-jdk18on</artifactId>
             <version>1.83</version>
         </dependency>
+
+        <!-- Flyway to run migrations -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+        </dependency>
+
     </dependencies>
 </project>
