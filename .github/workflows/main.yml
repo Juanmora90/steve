@@ -39,17 +39,6 @@ jobs:
             -Ddb.schema=stevedb \
             -Dmaven.test.skip=true
 
-      # Explicitly create the Dockerfile to avoid lstat/parsing errors
-      - name: Create Dockerfile
-        run: |
-          cat <<EOF > Dockerfile.prod
-          FROM eclipse-temurin:21-jre-jammy
-          COPY target/steve.war /opt/steve.war
-          ENV JAVA_OPTS="-Djava.net.preferIPv4Stack=true"
-          EXPOSE 8080
-          ENTRYPOINT ["java", "-jar", "/opt/steve.war"]
-          EOF
-
       - name: Log into GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -61,6 +50,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile.prod # Point to the file we just created
+          file: ./k8s/docker/Dockerfile
           push: true
           tags: ghcr.io/juanmora90/steve:latest
