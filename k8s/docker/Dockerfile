@@ -51,3 +51,11 @@ USER appuser
 
 # Run the app
 CMD ["java", "-Djdk.tls.client.protocols=TLSv1.2,TLSv1.3", "-jar", "steve.war"]
+
+FROM eclipse-temurin:21-jre-jammy
+
+# Copy the application artifact
+COPY --from=builder /code/target/steve.war /opt/steve.war
+
+# NEW: Explicitly copy the migration SQL files to a known path
+COPY --from=builder /code/src/main/resources/db/migration /opt/steve/db/migration
